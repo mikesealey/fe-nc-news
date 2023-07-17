@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-  <h1>App, innit?</h1>
+  <h1>NC News</h1>
     </>
   )
 }
