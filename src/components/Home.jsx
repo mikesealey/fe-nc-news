@@ -8,7 +8,6 @@ const Home = () => {
     useEffect(() => {
         axios.get("https://nc-news-x8sg.onrender.com/api/articles", {})
         .then(({data}) => {
-            console.log(data)
             setArticles(data)
         })
     }, [])

@@ -6,7 +6,6 @@ import Users from './Users'
 import Search from './Search'
 
 const Header = () => {
-    console.log("In the header")
     return (
         <div id="header">
             <h1>NC News</h1>
