@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticle } from "../utils/api";
 import Loading from "./Loading";
 
-const Article = ({props}) => {
+const Article = () => {
     const { article_id } = useParams()
     const [article, setArticle] = useState({})
     const [isLoading, setIsLoading] = useState(true)
