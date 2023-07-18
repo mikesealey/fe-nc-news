@@ -7,7 +7,7 @@ import Search from './Search'
 
 const Header = () => {
     return (
-        <div id="header">
+        <header >
             <h1>NC News</h1>
             <nav>
                     <div><Link to="./">Home</Link></div>
@@ -15,7 +15,7 @@ const Header = () => {
                     <div><Link to="./users">Users</Link></div>
                     <div><Link to="./search" >Search</Link></div>
             </nav>
-        </div>
+        </header>
     )
 }
 

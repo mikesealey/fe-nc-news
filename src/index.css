@@ -17,7 +17,7 @@ body {
   border: 5px solid red;
 }
 
-#header {
+header {
   border: 2px solid green;
   padding: 5px;
   margin: 5px;

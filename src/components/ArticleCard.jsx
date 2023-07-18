@@ -14,7 +14,6 @@ const ArticleCard = ({props}) => {
                             <div>{props.votes} votes </div>
                             <div>{props.comment_count} comments</div>
                         </div>
-                        {/* <img className="thumbnail" src={props.article_img_url}/>     */}
                     </div>
                 </Link>   
 
