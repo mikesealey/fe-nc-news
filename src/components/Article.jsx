@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../utils/api";
+import Loading from "./Loading";
 
 const Article = ({props}) => {
     const { article_id } = useParams()
     const [article, setArticle] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
 
-    useEffect((props)=> {
+    useEffect(()=> {
         fetchArticle(article_id)
         .then((response)=> {
+            setIsLoading(false)
             setArticle(response)
         })
     }, [])
 
+    
+
     return (
         <article className="body"> 
+            <div id="loading">{ isLoading ?  <Loading/> : null }</div>
             <div id="image-container">
                 <img id="article-image" src={article.article_img_url}/>
             </div>
