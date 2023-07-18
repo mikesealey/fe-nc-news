@@ -16,9 +16,6 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/topics" element={<Topics/>}></Route>
-        <Route path="/users" element={<Users/>}></Route>
-        <Route path="/search" element={<Search/>}></Route>
       </Routes>
     </>
   )
