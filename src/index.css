@@ -41,6 +41,7 @@ nav {
 .body {
   border: 2px solid orange;
   margin: 5px;
+  padding: 10px;
   max-width: 60em;
 
 }
@@ -60,6 +61,21 @@ nav {
   max-height: 100px;
   padding: 20px;
 }
+
+#image-container {
+  border: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#article-image {
+  /* width: auto;
+  height: auto; */
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
 
 .details {
   flex-direction: row;

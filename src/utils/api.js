@@ -10,3 +10,10 @@ export const fetchAllArticles = (props) => {
     })
 }
 
+export const fetchArticle = (props) => {
+
+    return myApi.get(`/articles/${props}`)
+    .then(({data}) => {
+        return data
+    })
+}
