@@ -11,8 +11,14 @@ export const fetchAllArticles = (props) => {
 }
 
 export const fetchArticle = (props) => {
-
     return myApi.get(`/articles/${props}`)
+    .then(({data}) => {
+        return data
+    })
+}
+
+export const fetchCommentsByArticleId = (props) => {
+    return myApi.get(`/articles/${props}/comments`)
     .then(({data}) => {
         return data
     })

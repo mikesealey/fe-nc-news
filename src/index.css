@@ -15,6 +15,7 @@
 body {
   margin: 10px;
   border: 5px solid red;
+  max-width: 60em;
 }
 
 header {
@@ -54,6 +55,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
 
+
 }
 
 .thumbnail {
@@ -84,8 +86,31 @@ nav {
 
 .details > * {
   margin: 10px;
+
 }
 
 .headline {
   max-width: 30em;
+}
+
+.comments-list {
+  border: 2px solid magenta;
+  padding: 10px;
+  margin: 5px;
+}
+
+#details-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.comment-card {
+  border: 2px solid pink;
+  padding: 10px;
+  margin: 5px;
+}
+
+.comment-card .details {
+  display: flex;
+  justify-content: space-between;
 }
