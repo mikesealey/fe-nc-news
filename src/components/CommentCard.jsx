@@ -1,8 +1,4 @@
-import Loading from "./Loading"
-import { useState } from "react"
-
 const CommentCard = ({props}) => {
-    const [isLoading, setIsLoading] = useState(true)
 
     return (
             <article className="comment-card">
