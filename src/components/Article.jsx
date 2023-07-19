@@ -33,9 +33,9 @@ const Article = () => {
                 setVotes(response.votes)
             })
             .catch((err) => {
-                console.log(err.response.status)
-                console.log(err.response.data.msg)
                 setVoteError(true)
+                setVotes(votes)
+                setUpVoted(false)
             })
         } else {
             setUpVoted(false)
@@ -45,9 +45,9 @@ const Article = () => {
                 setVotes(response.votes)
             })
             .catch((err) => {
-                console.log(err.response.status)
-                console.log(err.response.data.msg)
                 setVoteError(true)
+                setVotes(votes)
+                setUpVoted(false)
             })
         }
         
@@ -62,9 +62,9 @@ const Article = () => {
                 setVotes(response.votes)
             })
             .catch((err) => {
-                console.log(err.response.status)
-                console.log(err.response.data.msg)
                 setVoteError(true)
+                setVotes(votes)
+                setDownVoted(false)
             })
         } else {
             setDownVoted(false)
@@ -74,9 +74,10 @@ const Article = () => {
                 setVotes(response.votes)
             })
             .catch((err) => {
-                console.log(err.response.status)
-                console.log(err.response.data.msg)
+                setVoteError(err)
                 setVoteError(true)
+                setVotes(votes)
+                setDownVoted(false)
             })
 
         }
@@ -99,7 +100,7 @@ const Article = () => {
                 <div className="buttons">
                     <button id="upvote" onClick={()=> {upVote(upVote)}} disabled={downVoted}>UPVOTE</button>
                     <button id="downvote" onClick={()=> {downVote(downVote)}} disabled={upVoted}>DOWNVOTE</button>
-                    <div id="">{voteError ? <p>Error at API call</p> : null}</div>
+                    <div id="voteError">{voteError ? <p>Error at API call</p> : null}</div>
                 </div>
             </div>
 
