@@ -23,3 +23,10 @@ export const fetchCommentsByArticleId = (props) => {
         return data
     })
 }
+
+export const patchVotes = (props, vote) => {
+    return myApi.patch(`articles/${props}`, {inc_votes: vote})
+    .then(({data}) => {
+        return data
+    })
+}
