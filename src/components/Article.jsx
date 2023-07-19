@@ -4,6 +4,7 @@ import { fetchArticle } from "../utils/api";
 import { patchVotes } from "../utils/api";
 import Loading from "./Loading";
 import Comments from "./Comments";
+import WriteComment from "./WriteComment";
 
 const Article = () => {
     const { article_id } = useParams()
@@ -108,6 +109,7 @@ const Article = () => {
                 {article.body}
             </p>
         </article>
+        <WriteComment/>
         <Comments/>
 
 

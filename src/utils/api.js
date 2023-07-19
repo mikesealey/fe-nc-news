@@ -30,3 +30,11 @@ export const patchVotes = (props, vote) => {
         return data
     })
 }
+
+export const postComment = (props, username, body) => {
+    console.log(props, username, body)
+    return myApi.post(`articles/${props}`, {username: username, body: body})
+    .then(({data}) => {
+        return data
+    })
+}
