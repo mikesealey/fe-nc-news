@@ -37,13 +37,14 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .body {
   border: 2px solid orange;
   margin: 5px;
   padding: 10px;
-  max-width: 60em;
+  max-width: 50em;
 
 }
 
@@ -66,6 +67,7 @@ nav {
 
 #image-container {
   border: 2px solid white;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -74,13 +76,14 @@ nav {
 #article-image {
   /* width: auto;
   height: auto; */
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 60vw;
+  max-height: 60vh;
 }
 
 
 .details {
   flex-direction: row;
+  flex-wrap: wrap;
 
 }
 
@@ -102,12 +105,14 @@ nav {
 #details-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .comment-card {
   border: 2px solid pink;
   padding: 10px;
   margin: 5px;
+  
 }
 
 .comment-card .details {
