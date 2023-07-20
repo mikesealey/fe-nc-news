@@ -40,3 +40,18 @@ export const postComment = (props, givenUsername, givenBody) => {
         return err
     })
 }
+
+export const fetchAllTopics = () => {
+    return myApi.get(`/topics`)
+    .then(({data}) => {
+        return data
+    })
+}
+
+export const fetchArticlesByTopic = (props) => {
+    console.log(props)
+    return myApi.get(`/articles?topic=${props}`)
+    .then(({data}) => {
+        return data
+    })
+}
