@@ -25,8 +25,18 @@ export const fetchCommentsByArticleId = (props) => {
 }
 
 export const patchVotes = (props, vote) => {
-    return myApi.patch(`articles/${props}`, {inc_votes: vote})
+    return myApi.patch(`/articles/${props}`, {inc_votes: vote})
     .then(({data}) => {
         return data
+    })
+}
+
+export const postComment = (props, givenUsername, givenBody) => {
+    return myApi.post(`/articles/${props}/comments`, {user_name: givenUsername, body: givenBody})
+    .then(({data}) => {
+        return data
+    })
+    .catch((err) => {
+        return err
     })
 }
