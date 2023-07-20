@@ -17,15 +17,14 @@ const Topics = () => {
 
     return (
         <div key="TopicsList">
-        <div id="loading">{ isLoading ? <Loading/> : null}</div>
-        <div className="body topics">
-            {topics.map((topic) => {
-                return (
-                    <TopicCard props={topic}/>
-                )
-            })}
-        </div>
-        
+            <div id="loading">{ isLoading ? <Loading/> : null}</div>
+            <div className="body topics">
+                {topics.map((topic) => {
+                    return (
+                        <TopicCard props={topic} key={topic.slug}/>
+                    )
+                })}
+            </div>
         </div>
     )
 }

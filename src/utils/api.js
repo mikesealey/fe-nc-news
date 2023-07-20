@@ -49,7 +49,6 @@ export const fetchAllTopics = () => {
 }
 
 export const fetchArticlesByTopic = (props) => {
-    console.log(props)
     return myApi.get(`/articles?topic=${props}`)
     .then(({data}) => {
         return data
