@@ -15,7 +15,7 @@ const Comments = () => {
             setIsLoading(false)
             setComments(response)
         })
-    }, [])
+    }, [comments])
 
     return (
         <div className="comments-list">

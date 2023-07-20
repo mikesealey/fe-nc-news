@@ -1,29 +1,31 @@
-import { useEffect, useImperativeHandle, useState } from "react"
+import { useEffect, useState } from "react"
 import { postComment } from "../utils/api"
 import { useParams } from "react-router-dom"
 
 const WriteComment = () => {
     const [username, setUsername] = useState("")
     const [body, setBody] = useState("")
-    const [returned, setReturned] = useState("")
+    const [submitted, setSubmitted] = useState(false)
+    const [returned, setReturned] = useState(null) // 
     const { article_id } = useParams()
-
-    const submitFn = () => {
+    
+    const submitFn = (event) => {
         event.preventDefault()
+        setSubmitted(true)
+        setUsername("")
+        setBody("")
 
-        useEffect(()=>{
-            postComment(article_id, username, body)
-            .then((response)=> {
-                console.log(response)
-            })
+
+
+        postComment(article_id, username, body)
+        .then((response) => {
+            setReturned(response)
         })
 
     }
 
-    /**Passing the username and comment to the API doesn't currently work, but we're breaking off to do some solo katas. */
-
     return (
-        <form className="write-comment">
+        <form  onSubmit={(event)=> {submitFn(event)}} className="write-comment">
             <h2>Write Comment HERE!</h2>
             <label>Username</label>
             <input 
@@ -32,7 +34,7 @@ const WriteComment = () => {
             id="description" 
             placeholder="Your Name Here"
             value={username}
-            onChange={(event)=>{setUsername(event.target.value)}}></input>
+            onChange={(e)=>{setUsername(e.target.value)}}></input>
 
             <label>Comment Input</label>
             <input 
@@ -41,9 +43,13 @@ const WriteComment = () => {
             id="description" 
             placeholder="Tell us what you think..."
             value={body}
-            onChange={(event)=>{setBody(event.target.value)}}></input>
+            onChange={(e)=>{setBody(e.target.value)}}></input>
 
-            <button onClick={submitFn}>Submit</button>
+            <button disabled={submitted}>Submit</button>
+            
+            {/* This div should say that the comment is being sent, and disapear when the comment can be seen in the DB */}
+        <div >{submitted && !returned? <p className="submit-comment-response">Posting comment</p> : null}</div>
+        <div >{returned && returned.message ? <p>An error occured while posting your comment</p> : null} </div>
         </form>
     )
 }
