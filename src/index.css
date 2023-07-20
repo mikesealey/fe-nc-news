@@ -55,8 +55,6 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-
 }
 
 .thumbnail {
@@ -145,4 +143,13 @@ nav {
 .write-comment > * {
   padding: 10px;
   margin: 5px;
+}
+
+.topic-card {
+  border: 2px solid white;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
