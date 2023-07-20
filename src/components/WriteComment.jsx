@@ -37,19 +37,18 @@ const WriteComment = () => {
             onChange={(e)=>{setUsername(e.target.value)}}></input>
 
             <label>Comment Input</label>
-            <input 
+            <textarea
             required 
             type="text" 
             id="description" 
             placeholder="Tell us what you think..."
             value={body}
-            onChange={(e)=>{setBody(e.target.value)}}></input>
+            onChange={(e)=>{setBody(e.target.value)}}></textarea>
 
             <button disabled={submitted}>Submit</button>
             
-            {/* This div should say that the comment is being sent, and disapear when the comment can be seen in the DB */}
         <div >{submitted && !returned? <p className="submit-comment-response">Posting comment</p> : null}</div>
-        <div >{returned && returned.message ? <p>An error occured while posting your comment</p> : null} </div>
+        <div >{returned && returned.message ? <p>An error occurred while posting your comment. Perhaps you need to be logged in...</p> : null} </div>
         </form>
     )
 }
