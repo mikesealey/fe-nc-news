@@ -2,9 +2,9 @@ import axios from "axios"
 
 const myApi = axios.create({baseURL: "https://nc-news-x8sg.onrender.com/api"})
 
-export const fetchAllArticles = (props) => {
 
-    return myApi.get(`/articles`)
+export const fetchAllArticles = (topic, sortBy, order) => {
+    return myApi.get("/articles", {params: {topic: topic, sort_by: sortBy, order: order}})
     .then(({data}) => {
         return data
     })
@@ -43,13 +43,6 @@ export const postComment = (props, givenUsername, givenBody) => {
 
 export const fetchAllTopics = () => {
     return myApi.get(`/topics`)
-    .then(({data}) => {
-        return data
-    })
-}
-
-export const fetchArticlesByTopic = (props) => {
-    return myApi.get(`/articles?topic=${props}`)
     .then(({data}) => {
         return data
     })

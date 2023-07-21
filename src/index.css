@@ -10,6 +10,7 @@
 
 * {
   color: white;
+  border-radius: 15px;
 }
 
 body {
@@ -152,4 +153,23 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.sort-by-bar {
+  border: 2px solid mediumaquamarine;
+  padding: 10px;
+  margin: 5px;
+
+
+}
+
+.loading {
+  border: 2px solid wheat;
+  padding: 10px;
+  margin: 5px;
+}
+
+form > * {
+  border-radius: 0px;
+  font-size: 32px;
 }
