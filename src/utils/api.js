@@ -1,21 +1,13 @@
 import axios from "axios"
-import { useSearchParams } from "react-router-dom";
 
 const myApi = axios.create({baseURL: "https://nc-news-x8sg.onrender.com/api"})
 
 
 export const fetchAllArticles = (topic, sortBy, order) => {
-    // const topic = params.get("topic")
-    // const sortBy = params.get("sort_by")
-    // const order = params.get("order")
-
-    console.log(`Filters: topic: ${topic}, sort_by: ${sortBy}, order: ${order}`)
-
     return myApi.get("/articles", {params: {topic: topic, sort_by: sortBy, order: order}})
     .then(({data}) => {
         return data
     })
-    // myApi.get("/api/articles", {params: {topic: coding, sort_by: comment_count, order: ASC}})
 }
 
 export const fetchArticle = (props) => {
@@ -55,10 +47,3 @@ export const fetchAllTopics = () => {
         return data
     })
 }
-
-// export const fetchArticlesByTopic = (props) => {
-//     return myApi.get(`/articles?topic=${props}`)
-//     .then(({data}) => {
-//         return data
-//     })
-// }

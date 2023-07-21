@@ -21,12 +21,8 @@ const Home = (props) => {
         })
     }, [topic, sortBy, order])
 
-    console.log(">>>", topic, sortBy, order)
-
-
     return (
         <>
-        <p>topic={topic} sortBy={sortBy} order={order} </p>
         <div id="loading">{ isLoading ?  <Loading/> : null }</div>
         <div className="body articles" key="articles-body">
             <SortBy setTopic={setTopic} setSortBy={setSortBy} setOrder={setOrder}/>
