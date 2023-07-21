@@ -153,3 +153,8 @@ nav {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.sort-by-bar {
+  border: 2px solid mediumaquamarine;
+
+}
