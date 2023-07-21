@@ -12,8 +12,6 @@ const SortBy = (props) => {
 
     const [searchParams, setSearchParams] = useSearchParams(props)
 
-    // // pass via props
-    // const [topic, setTopic] = useState()
     const [sortByQuery, setSortByQuery] = useState()
 
     const setNewTopic = (event) => {
@@ -29,19 +27,9 @@ const SortBy = (props) => {
 
     return (
     <div className="sort-by-bar">
-        {/* <form >
-                <label htmlFor="topic-selector">Filter Topics...</label>
-                <select id="topic-selector" name="topic-selector" value={topic} onChange={setNewTopic}>
-                    <option value={""}>All Topics</option>
-                    <option value={"coding"}>Coding</option>
-                    <option value={"cooking"}>Cooking</option>
-                    <option value={"football"}>Football</option>
-
-                </select>
-            </form> */}
 
         <form >
-                <label htmlFor="sort-by">sort by...</label>
+                <label htmlFor="sort-by">Sort by...</label>
                 <select id="sort=by" name="sort-by" value={sortByQuery} onChange={setNewParams}>
                     <option value={"articles.created_at__DESC"}>Date (newest first)</option>
                     <option value={"articles.created_at__ASC"}>Date (oldest first)</option>
@@ -56,13 +44,3 @@ const SortBy = (props) => {
 }
 
 export default SortBy
-
-/**
- * sort by date
-sort by comment count
-sort by votes
-flip the order between ascending and descending
- * 
-
-.get method on searchParams on API call
- */
