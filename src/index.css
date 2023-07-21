@@ -10,6 +10,7 @@
 
 * {
   color: white;
+  border-radius: 15px;
 }
 
 body {
@@ -158,6 +159,7 @@ nav {
   border: 2px solid mediumaquamarine;
   padding: 10px;
   margin: 5px;
+  font-size: 32px;
 }
 
 .loading {
