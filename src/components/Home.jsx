@@ -9,9 +9,12 @@ const Home = (props) => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
-    const [topic, setTopic] = useState("")
-    const [sortBy, setSortBy] = useState("created_at")
-    const [order, setOrder] = useState("DESC")
+    const topic = props.topic
+    const setTopic = props.setTopic
+    const sortBy = props.sortBy
+    const setSortBy =props.setSortBy
+    const order = props.order
+    const setOrder = props.setOrder
 
     useEffect(()=> {
         fetchAllArticles(topic, sortBy, order)
@@ -25,7 +28,7 @@ const Home = (props) => {
         <>
         <div id="loading">{ isLoading ?  <Loading/> : null }</div>
         <div className="body articles" key="articles-body">
-            <SortBy setTopic={setTopic} setSortBy={setSortBy} setOrder={setOrder}/>
+            <SortBy topic={topic} setTopic={setTopic} sortBy={sortBy} setSortBy={setSortBy} order={order} setOrder={setOrder}/>
             {articles.map((article) => {
                 return (
                     <ArticleCard props={article} key={article.article_id}></ArticleCard>

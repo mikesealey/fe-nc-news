@@ -11,8 +11,6 @@ const Loading = () => {
     ]
 
     const randomNumber = Math.floor((Math.random() * loadingMessages.length))
-    console.log(randomNumber)
-    console.log(loadingMessages[randomNumber])
 
     return (
         <div className="loading">

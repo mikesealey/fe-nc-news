@@ -11,6 +11,7 @@ const Header = () => {
             <h1>NC News</h1>
             <nav>
                     <div><Link to="./">Home</Link></div>
+                    <div><Link to="./topics">Topics</Link></div>
                     <div><Link to="./users">Users</Link></div>
                     <div><Link to="./search" >Search</Link></div>
             </nav>
