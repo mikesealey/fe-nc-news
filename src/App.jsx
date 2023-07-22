@@ -10,6 +10,8 @@ import Topics from './components/Topics'
 import Users from './components/Users'
 import Search from './components/Search'
 
+import { UserProvider } from './contexts/LoggedInUser'
+
 
 function App() {
   const [articleId, setArticleId] = useState(1)

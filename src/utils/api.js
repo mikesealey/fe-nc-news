@@ -47,3 +47,7 @@ export const fetchAllTopics = () => {
         return data
     })
 }
+
+export const deleteComment = (commentId) => {
+    return myApi.delete(`/comments/${commentId}`)
+}

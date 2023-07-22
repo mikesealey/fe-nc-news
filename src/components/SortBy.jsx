@@ -30,7 +30,7 @@ const SortBy = (props) => {
 
         <form >
                 <label htmlFor="sort-by">Sort by...</label>
-                <select id="sort=by" name="sort-by" value={sortByQuery} onChange={setNewParams}>
+                <select id="sort-by" name="sort-by" value={sortByQuery} onChange={setNewParams}>
                     <option value={"articles.created_at__DESC"}>Date (newest first)</option>
                     <option value={"articles.created_at__ASC"}>Date (oldest first)</option>
                     <option value={"comment_count__DESC"}>Most Comments</option>
