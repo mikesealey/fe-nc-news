@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <header >
             <h1>NC News</h1>
-            <p id="logged-in-user">Logged in as {user}</p>
+            <p id="logged-in-user">Logged in as _{user}</p>
             <nav>
                     <div><Link to="./">Home</Link></div>
                     <div><Link to="./topics">Topics</Link></div>

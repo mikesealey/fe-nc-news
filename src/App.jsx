@@ -9,8 +9,8 @@ import Comments from "./components/Comments"
 import Topics from './components/Topics'
 import Users from './components/Users'
 import Search from './components/Search'
+import ErrorPage from './components/Error'
 
-import { UserProvider } from './contexts/LoggedInUser'
 
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
         <Route path="/articles/:article_id" ></Route>
         <Route path='topics' element={<Topics/>}></Route>
         <Route path="/articles" element={<Home topic={topic} setTopic={setTopic} sortBy={sortBy} setSortBy={setSortBy} order={order} setOrder={setOrder} />} ></Route>
+        <Route path="*" element={<ErrorPage/>}></Route>
       </Routes>
     </>
   )

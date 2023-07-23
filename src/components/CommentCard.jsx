@@ -1,17 +1,16 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from "../contexts/LoggedInUser"
 import { deleteComment } from "../utils/api"
 
 const CommentCard = ({props}) => {
     const { user } = useContext(UserContext)
+    const [deleting, setDeleting] = useState("Delete Comment")
 
-
+    let confirmation = "Delete Comment"
     const deleteCommentButton = () => {
-        if (props.author === user) {
-            deleteComment(props.comment_id)
-        } else {
-            console.log("That's not your comment to delete, pal!")
-        }
+        console.log("Clicked")
+        setDeleting("Deleting comment") 
+        deleteComment(props.comment_id)
     }
 
 
@@ -19,7 +18,7 @@ const CommentCard = ({props}) => {
         
             <article className="comment-card">
                 <div className="details">
-                {props.author === user ? <button onClick={()=>{deleteCommentButton()}}>Delete Comment</button> : null}
+                {props.author === user ? <button disabled={deleting === "Deleting comment"} onClick={()=>{deleteCommentButton()}}>{deleting}</button> : null}
                     <h3>{props.author}</h3>
                     <h3>{props.created_at}</h3>
                     <h3>{props.votes}</h3>
