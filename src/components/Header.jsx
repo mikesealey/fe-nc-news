@@ -1,14 +1,18 @@
-
 import { Link } from "react-router-dom"
+import { useContext } from "react"
 
 import Topics from "./Topics"
 import Users from './Users'
 import Search from './Search'
+import { UserContext } from "../contexts/LoggedInUser"
+
 
 const Header = () => {
+    const { user } = useContext(UserContext)
     return (
         <header >
             <h1>NC News</h1>
+            <p id="logged-in-user">Logged in as {user}</p>
             <nav>
                     <div><Link to="./">Home</Link></div>
                     <div><Link to="./topics">Topics</Link></div>

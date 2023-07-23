@@ -8,7 +8,9 @@ import { UserProvider } from './contexts/LoggedInUser'
 ReactDOM.createRoot(document.getElementById('root')).render(
 
     <BrowserRouter>
-        <App />
+        <UserProvider>
+            <App />
+        </UserProvider>
     </BrowserRouter>
 
 )
